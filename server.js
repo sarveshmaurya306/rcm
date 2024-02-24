@@ -34,9 +34,8 @@ app.get("/get-long-url", (req, res, next)=>{
 
     if(shortUrl) {
         if(database[shortUrl]) {
-           return res.send({
-                longUrl: database[shortUrl]
-           });
+
+           return res.redirect(database[shortUrl]);
         } else {
             res.send("Id not valid");
         }
